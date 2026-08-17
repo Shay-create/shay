@@ -28,28 +28,16 @@
     gap: 18px;
     padding: 18px 22px;
     border-radius: 22px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.28), rgba(255,255,255,0.12) 45%, var(--tint, rgba(255,255,255,0.10)));
-    backdrop-filter: blur(30px) saturate(200%) brightness(1.08);
-    -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(1.08);
-    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: rgba(246, 246, 248, 0.55);
+    backdrop-filter: blur(50px) saturate(180%);
+    -webkit-backdrop-filter: blur(50px) saturate(180%);
+    border: 0.5px solid rgba(255, 255, 255, 0.55);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.6),
-      inset 0 -1px 0 rgba(255, 255, 255, 0.12),
-      inset 0 0 40px rgba(255, 255, 255, 0.08),
-      0 8px 24px rgba(0, 0, 0, 0.25);
+      inset 0 0.5px 0 rgba(255, 255, 255, 0.7),
+      0 10px 30px rgba(0, 0, 0, 0.18);
     opacity: 0;
     transform: translateY(6px);
     transition: opacity 700ms ease, transform 700ms ease;
-    pointer-events: none;
-  }
-
-  .card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 50%;
-    border-radius: 22px 22px 0 0;
-    background: linear-gradient(180deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
     pointer-events: none;
   }
 
@@ -68,7 +56,7 @@
     justify-content: center;
     box-shadow:
       inset 0 1px 0 rgba(255,255,255,0.3),
-      0 6px 14px rgba(0,0,0,0.35);
+      0 4px 12px rgba(0,0,0,0.22);
     color: #fff;
     font-weight: 900;
   }
@@ -79,8 +67,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: #fff;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.45);
+    color: #1d1d1f;
     overflow: hidden;
   }
 
@@ -95,7 +82,7 @@
     margin-top: 4px;
     font-size: 16px;
     font-weight: 700;
-    opacity: 0.92;
+    opacity: 0.65;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -141,7 +128,6 @@
   platforms.forEach((p, i) => {
     const card = document.createElement('div');
     card.className = 'card';
-    if (p.tint) card.style.setProperty('--tint', p.tint);
     card.innerHTML = `
       <div class="icon ${p.bg}">${p.svg}</div>
       <div class="text">
